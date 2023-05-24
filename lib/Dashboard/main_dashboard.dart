@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'Section1 - Ward/section1_ward.dart';
 import '../Bottom Navigation/bottom_navigation_bar.dart';
+import '../AppBar/app_bar.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      home: DashboardScreen(),
+      routes: {
+        '/dashboard': (context) => DashboardScreen(),
+        // Other route definitions
+      },
+      // Other MaterialApp configurations
     ),
   );
 }
@@ -13,46 +18,10 @@ void main() {
 class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 5,
-          leading: IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: Color(0xFF0071C5),
-            ),
-            onPressed: () {
-              // Add your onPressed function here
-            },
-          ),
-          title: Center(
-            child: Image.asset(
-              'images/SMS_3.png',
-              height: 45,
-            ),
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 16),
-              child: Container(
-                width: 49,
-                height: 49,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  border: Border.all(color: Color(0xFF0071C5), width: 2),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(25),
-                  child: Image.asset(
-                    'images/image_profile.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-          ],
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: TopAppBar(title: 'Home',
+            showBackButton: false
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +109,6 @@ class DashboardScreen extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomNavigationBarWidget(),
-      ),
     );
   }
 
@@ -151,10 +119,11 @@ class DashboardScreen extends StatelessWidget {
         // Navigate to the corresponding screen based on the index
         switch (index) {
           case 0:
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => WardsSection()),
             );
+
             break;
           // case 1:
           //   Navigator.push(

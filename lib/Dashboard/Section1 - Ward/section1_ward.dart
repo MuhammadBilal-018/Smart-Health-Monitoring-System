@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../Bottom Navigation/bottom_navigation_bar.dart';
+import '../../AppBar/app_bar.dart';
 void main() {
   runApp(
     MaterialApp(
@@ -88,6 +89,7 @@ class WardsSection extends StatelessWidget {
     }
 
     return Scaffold(
+      appBar: TopAppBar(title: 'home',),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 15),
