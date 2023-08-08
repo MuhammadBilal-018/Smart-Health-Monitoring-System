@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_monitoring_system/Dashboard/section1_bed.dart';
 import '../../Bottom Navigation/bottom_navigation_bar.dart';
 import '../../AppBar/app_bar.dart';
 void main() {
@@ -166,15 +167,30 @@ class WardsSection extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              listTile("03", "Sarim", "sarim us a dsdf ", "Last Check: 2:05 am"),
+              InkWell(
+                onTap: (){Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SectionBed()),
+            );},
+                child: listTile("03", "Sarim", "sarim us a dsdf ", "Last Check: 2:05 am")),
               SizedBox(
                 height: 20,
               ),
-              listTile("03", "Asif", "Asif us a dsdf ", "Last Check: 2:05 am"),
+              InkWell(
+                onTap: (){Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SectionBed()),
+            );},
+                child: listTile("03", "Asif", "Asif us a dsdf ", "Last Check: 2:05 am")),
               SizedBox(
                 height: 20,
               ),
-              listTile("03", "Bilal", "Bilal is a dsdf ", "Last Check: 2:05 am")
+              InkWell(
+                onTap: (){Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SectionBed()),
+            );},
+                child: listTile("03", "Bilal", "Bilal is a dsdf ", "Last Check: 2:05 am"))
             ],
           ),
         ),

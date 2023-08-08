@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../Dashboard/main_dashboard.dart';
 import '../Bottom Navigation/Doctor Profile/doctor_profile.dart';
+import 'package:quickalert/quickalert.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _BottomNavigationBarWidgetState createState() =>
       _BottomNavigationBarWidgetState();
 }
@@ -17,7 +19,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       child: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onTabTapped,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -46,10 +48,14 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             MaterialPageRoute(builder: (context) => DashboardScreen()),
           );
           break;
-
-          break;
         case 1:
-          // Handle the profile screen
+          QuickAlert.show(
+              context: context,
+              type: QuickAlertType.warning,
+              confirmBtnText: 'Bed # 01',
+               text: 'Analyze the live reports and \n reach at first priority',
+              title: 'Emergency Ward');
+              
           break;
         case 2:
           Navigator.push(
