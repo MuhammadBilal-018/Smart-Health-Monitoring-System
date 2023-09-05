@@ -18,14 +18,14 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: Colors.white,
         leading: showBackButton
             ? IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Color(0xFF0071C5),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        )
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Color(0xFF0071C5),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
             : null,
         title: Center(
           child: Padding(
@@ -38,7 +38,6 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
     );
-
   }
 
   @override

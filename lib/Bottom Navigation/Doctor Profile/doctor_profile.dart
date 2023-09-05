@@ -273,7 +273,6 @@ class DoctorProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBarWidget(),
     );
   }
 }

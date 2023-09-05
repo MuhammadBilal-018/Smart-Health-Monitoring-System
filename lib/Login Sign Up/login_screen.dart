@@ -137,10 +137,9 @@ class _LoginScreenState extends State<LoginScreen> {
               child: MaterialButton(
                 onPressed: () {
                   // add your code for login button functionality
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => BottomNavigationBarWidget()),
+                    MaterialPageRoute(builder: (context) => DashboardScreen()),
                   );
                 },
                 child: Text(

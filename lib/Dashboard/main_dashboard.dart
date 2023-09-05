@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
+import 'package:smart_monitoring_system/Dashboard/communication_center.dart';
 import '../Bottom Navigation/Doctor Profile/doctor_profile.dart';
-import '../Bottom Navigation/bottomnavigation.dart';
 import '../Bottom Navigation/notification _screen.dart';
 import 'Section1 - Ward/section1_ward.dart';
 import '../AppBar/app_bar.dart';
+import 'notification_alert.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -136,19 +137,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
           //   );
           //   break;
           case 2:
-            QuickAlert.show(
-                context: context,
-                type: QuickAlertType.warning,
-                confirmBtnText: 'Bed # 01',
-                text: 'Analyze the live reports and \n reach at first priority',
-                title: 'Emergency Ward');
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => NotificationAlertScreen()),
+            );
             break;
-          // case 3:
-          //   Navigator.push(
-          //     context,
-          //     MaterialPageRoute(builder: (context) => GridFourScreen()),
-          //   );
-          //   break;
+          case 3:
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => CommunicationCenterScreen()),
+            );
+            break;
         }
       },
       child: Container(
