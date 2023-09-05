@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_monitoring_system/Dashboard/section1_bed.dart';
-import '../../Bottom Navigation/bottom_navigation_bar.dart';
 import '../../AppBar/app_bar.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -78,7 +78,6 @@ class WardsSection extends StatelessWidget {
                     Text(description),
                     SizedBox(height: MediaQuery.of(context).size.height * .01),
                     Text(
-
                       lastCheck,
                       style: TextStyle(color: Colors.green),
                     ),
@@ -90,7 +89,9 @@ class WardsSection extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: TopAppBar(title: 'home',),
+      appBar: TopAppBar(
+        title: 'home',
+      ),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 15),
@@ -168,34 +169,43 @@ class WardsSection extends StatelessWidget {
                 height: 20,
               ),
               InkWell(
-                onTap: (){Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SectionBed()),
-            );},
-                child: listTile("03", "Sarim", "sarim us a dsdf ", "Last Check: 2:05 am")),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SectionBed()),
+                    );
+                  },
+                  child: listTile("03", "Sarim", "sarim us a dsdf ",
+                      "Last Check: 2:05 am")),
               SizedBox(
                 height: 20,
               ),
               InkWell(
-                onTap: (){Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SectionBed()),
-            );},
-                child: listTile("03", "Asif", "Asif us a dsdf ", "Last Check: 2:05 am")),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SectionBed()),
+                    );
+                  },
+                  child: listTile(
+                      "03", "Asif", "Asif us a dsdf ", "Last Check: 2:05 am")),
               SizedBox(
                 height: 20,
               ),
               InkWell(
-                onTap: (){Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SectionBed()),
-            );},
-                child: listTile("03", "Bilal", "Bilal is a dsdf ", "Last Check: 2:05 am"))
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SectionBed()),
+                    );
+                  },
+                  child: listTile(
+                      "03", "Bilal", "Bilal is a dsdf ", "Last Check: 2:05 am"))
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBarWidget(),
+      // bottomNavigationBar: BottomNavigationBarWidget(),
     );
   }
 }

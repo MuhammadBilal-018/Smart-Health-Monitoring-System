@@ -1,116 +1,118 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
+import '../Bottom Navigation/Doctor Profile/doctor_profile.dart';
+import '../Bottom Navigation/bottomnavigation.dart';
+import '../Bottom Navigation/notification _screen.dart';
 import 'Section1 - Ward/section1_ward.dart';
-import '../Bottom Navigation/bottom_navigation_bar.dart';
 import '../AppBar/app_bar.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      routes: {
-        '/dashboard': (context) => DashboardScreen(),
-        // Other route definitions
-      },
-      // Other MaterialApp configurations
-    ),
-  );
+class DashboardScreen extends StatefulWidget {
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-class DashboardScreen extends StatelessWidget {
+class _DashboardScreenState extends State<DashboardScreen> {
+  final List<Widget> pages = [
+    DashboardScreen(),
+    Notication(),
+    DoctorProfileScreen(),
+  ];
+
+  int _indexSelected = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: TopAppBar(title: 'Home',
-            showBackButton: false
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 2,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 5,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: SizedBox(),
+      resizeToAvoidBottomInset: false,
+      appBar: TopAppBar(title: 'Home', showBackButton: false),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: 2,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 5,
+                  offset: Offset(0, 2),
+                ),
+              ],
             ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 25),
-                child: Text(
-                  'Dashboard',
-                  style: TextStyle(
-                    color: Color(0xFF0071C5),
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 27,
-                  ),
+            child: SizedBox(),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 25),
+              child: Text(
+                'Dashboard',
+                style: TextStyle(
+                  color: Color(0xFF0071C5),
+                  fontFamily: 'Lato',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 27,
                 ),
               ),
             ),
-            SizedBox(height: 25),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 15),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search',
-                        hintStyle: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 14,
-                          color: Color(0xFFA6A6A6),
-                        ),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  Icon(
-                    Icons.search,
-                    color: Color(0xFF0071C5),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 25),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              children: [
-                buildGridItem(context, 'Wards', 'Description 1', 0),
-                buildGridItem(context, 'Emergency Patients Ward', 'Description 2', 1),
-                buildGridItem(context, 'Alert Notification', 'Description 3', 2),
-                buildGridItem(context, 'Communication Center', 'Description 4', 3),
+          ),
+          SizedBox(height: 25),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(5),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: Offset(0, 2),
+                ),
               ],
             ),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBarWidget(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      hintStyle: TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 14,
+                        color: Color(0xFFA6A6A6),
+                      ),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+                Icon(
+                  Icons.search,
+                  color: Color(0xFF0071C5),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 25),
+          GridView.count(
+            crossAxisCount: 2,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            children: [
+              buildGridItem(context, 'Wards', 'Description 1', 0),
+              buildGridItem(
+                  context, 'Emergency Patients Ward', 'Description 2', 1),
+              buildGridItem(context, 'Alert Notification', 'Description 3', 2),
+              buildGridItem(
+                  context, 'Communication Center', 'Description 4', 3),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -135,11 +137,11 @@ class DashboardScreen extends StatelessWidget {
           //   break;
           case 2:
             QuickAlert.show(
-              context: context,
-              type: QuickAlertType.warning,
-              confirmBtnText: 'Bed # 01',
-               text: 'Analyze the live reports and \n reach at first priority',
-              title: 'Emergency Ward');
+                context: context,
+                type: QuickAlertType.warning,
+                confirmBtnText: 'Bed # 01',
+                text: 'Analyze the live reports and \n reach at first priority',
+                title: 'Emergency Ward');
             break;
           // case 3:
           //   Navigator.push(

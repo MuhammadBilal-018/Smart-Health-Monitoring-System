@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import '../Bottom Navigation/bottomnavigation.dart';
 import 'signup_screen.dart';
 import '../Dashboard/main_dashboard.dart';
-
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -137,10 +137,11 @@ class _LoginScreenState extends State<LoginScreen> {
               child: MaterialButton(
                 onPressed: () {
                   // add your code for login button functionality
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => DashboardScreen()),
-                    );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BottomNavigationBarWidget()),
+                  );
                 },
                 child: Text(
                   'Log In',
@@ -153,41 +154,41 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-          SizedBox(height: 40),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 30),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    child: Divider(
-                      color: Color(0xFFA6A6A6),
-                      thickness: 1,
+            SizedBox(height: 40),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      child: Divider(
+                        color: Color(0xFFA6A6A6),
+                        thickness: 1,
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  'or log in with',
-                  style: TextStyle(
-                    color: Color(0xFFA6A6A6),
-                    fontFamily: 'Lato',
-                    fontSize: 17,
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    child: Divider(
+                  Text(
+                    'or log in with',
+                    style: TextStyle(
                       color: Color(0xFFA6A6A6),
-                      thickness: 1,
+                      fontFamily: 'Lato',
+                      fontSize: 17,
                     ),
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      child: Divider(
+                        color: Color(0xFFA6A6A6),
+                        thickness: 1,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: 20),
+            SizedBox(height: 20),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 74),
               child: Column(
@@ -214,10 +215,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         child: IconButton(
                           onPressed: () {
-
                             // add your code for Google login
                           },
-                            // SvgPicture.asset('images/.svg'),
+                          // SvgPicture.asset('images/.svg'),
                           icon: Image.asset('images/icon_google.png'),
                         ),
                       ),
@@ -274,7 +274,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     "Don't have an account?",
                     style: TextStyle(
-                        fontSize: 16,
+                      fontSize: 16,
                       color: Colors.grey,
                     ),
                   ),

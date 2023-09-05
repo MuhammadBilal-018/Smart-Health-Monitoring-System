@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-import '../bottom_navigation_bar.dart';
 import '../../AppBar/app_bar.dart';
-
-void main() {
-  runApp(
-    MaterialApp(
-      home: DoctorProfileScreen(),
-    ),
-  );
-}
 
 class DoctorProfileScreen extends StatelessWidget {
   @override
@@ -124,7 +115,9 @@ class DoctorProfileScreen extends StatelessWidget {
                         Icons.person_2_outlined,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('About',
                           style: TextStyle(
                             fontSize: 20,
@@ -132,7 +125,7 @@ class DoctorProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                 Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 25, right: 240),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -141,7 +134,9 @@ class DoctorProfileScreen extends StatelessWidget {
                         Icons.location_pin,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('Services',
                           style: TextStyle(
                             fontSize: 20,
@@ -149,7 +144,7 @@ class DoctorProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                 Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 25, right: 238),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -158,7 +153,9 @@ class DoctorProfileScreen extends StatelessWidget {
                         Icons.favorite,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('Favorite',
                           style: TextStyle(
                             fontSize: 20,
@@ -166,7 +163,7 @@ class DoctorProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                 Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 25, right: 220),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -175,12 +172,13 @@ class DoctorProfileScreen extends StatelessWidget {
                         Icons.event_available_outlined,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('Avalibility',
                           style: TextStyle(
                             fontSize: 20,
                           )),
-                          
                     ],
                   ),
                 ),
@@ -200,15 +198,16 @@ class DoctorProfileScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.chat_bubble_outline_outlined  ,
+                        Icons.chat_bubble_outline_outlined,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('Help',
                           style: TextStyle(
                             fontSize: 20,
                           )),
-                          
                     ],
                   ),
                 ),
@@ -221,12 +220,13 @@ class DoctorProfileScreen extends StatelessWidget {
                         Icons.rate_review_outlined,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('Rate Us',
                           style: TextStyle(
                             fontSize: 20,
                           )),
-                          
                     ],
                   ),
                 ),
@@ -239,12 +239,13 @@ class DoctorProfileScreen extends StatelessWidget {
                         Icons.question_mark_outlined,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text("FAQ's",
                           style: TextStyle(
                             fontSize: 20,
                           )),
-                          
                     ],
                   ),
                 ),
@@ -257,12 +258,13 @@ class DoctorProfileScreen extends StatelessWidget {
                         Icons.logout_outlined,
                         size: 30,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('LogOut',
                           style: TextStyle(
                             fontSize: 20,
                           )),
-                          
                     ],
                   ),
                 ),
@@ -271,7 +273,7 @@ class DoctorProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBarWidget(),
+      // bottomNavigationBar: BottomNavigationBarWidget(),
     );
   }
 }
