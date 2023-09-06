@@ -124,7 +124,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         // Navigate to the corresponding screen based on the index
         switch (index) {
           case 0:
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => WardsSection()),
             );
@@ -137,14 +137,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
           //   );
           //   break;
           case 2:
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) => NotificationAlertScreen()),
             );
             break;
           case 3:
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) => CommunicationCenterScreen()),
