@@ -104,12 +104,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
             physics: NeverScrollableScrollPhysics(),
             padding: EdgeInsets.symmetric(horizontal: 16),
             children: [
-              buildGridItem(context, 'Wards', 'Description 1', 0),
+              buildGridItem(
+                  context,
+                  'Wards',
+                  'Ward section displays assigned beds and patients medical records',
+                  0),
               buildGridItem(
                   context, 'Emergency Patients Ward', 'Description 2', 1),
-              buildGridItem(context, 'Alert Notification', 'Description 3', 2),
-              buildGridItem(
-                  context, 'Communication Center', 'Description 4', 3),
+              buildGridItem(context, 'Alert Notification',
+                  'Doctor can change the setting of Notification', 2),
+              buildGridItem(context, 'Communication Center',
+                  'Doctor can chat with Nurse for Patients', 3),
             ],
           ),
         ],

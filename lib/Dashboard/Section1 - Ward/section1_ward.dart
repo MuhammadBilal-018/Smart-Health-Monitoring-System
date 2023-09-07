@@ -175,8 +175,8 @@ class WardsSection extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => SectionBed()),
                     );
                   },
-                  child: listTile("03", "Sarim", "sarim us a dsdf ",
-                      "Last Check: 2:05 am")),
+                  child: listTile(
+                      "03", "Sarim", "Diabetes ", "Last Check: 2:05 am")),
               SizedBox(
                 height: 20,
               ),
@@ -187,8 +187,8 @@ class WardsSection extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => SectionBed()),
                     );
                   },
-                  child: listTile(
-                      "03", "Asif", "Asif us a dsdf ", "Last Check: 2:05 am")),
+                  child:
+                      listTile("03", "Asif", "Asthma ", "Last Check: 2:05 am")),
               SizedBox(
                 height: 20,
               ),
@@ -199,8 +199,8 @@ class WardsSection extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => SectionBed()),
                     );
                   },
-                  child: listTile(
-                      "03", "Bilal", "Bilal is a dsdf ", "Last Check: 2:05 am"))
+                  child:
+                      listTile("03", "Bilal", "Cancer", "Last Check: 2:05 am"))
             ],
           ),
         ),
