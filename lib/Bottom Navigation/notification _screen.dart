@@ -32,21 +32,21 @@ class _NoticationState extends State<Notication> {
                     decoration: BoxDecoration(
                         color: const Color(0xFF956CE6),
                         borderRadius: BorderRadius.circular(6)),
-                    child: Icon(Icons.timer,color: Colors.white,)                 ),
+                    child: Icon(
+                      Icons.timer,
+                      color: Colors.white,
+                    )),
                 // shape: ,
                 trailing: Text('2 min ago'),
-                
+
                 title: Text(
-                  cheakout
-                  ,
+                  cheakout,
                   style: TextStyle(fontSize: 15),
                 ),
-                subtitle: Text('check in at 10:00'),
+                subtitle: Text('Last Check Up at Ward # 01 Bed No.2'),
               );
-            })
-            );
+            }));
   }
-
 }
 //   void cheak() {
 //     int _value = int.parse(cheakout);
