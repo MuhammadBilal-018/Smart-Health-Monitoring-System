@@ -10,7 +10,7 @@ class CommunicationCenterScreen extends StatefulWidget {
 
 class _CommunicationCenterScreenState extends State<CommunicationCenterScreen> {
   TextEditingController _messageController = TextEditingController();
-  List<Message> _messages = []; // You can replace this with actual message data
+  List<Message> _messages = [];
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,6 @@ class _CommunicationCenterScreenState extends State<CommunicationCenterScreen> {
       appBar: TopAppBar(title: 'Communication Center'),
       body: Stack(
         children: [
-          // Background content goes here (messages, text fields, etc.)
           Column(
             children: [
               Expanded(
